@@ -1,0 +1,6 @@
+.jumbotron {
+    background-image: url("../images/jumbotron-homepage.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 280px;
+}
