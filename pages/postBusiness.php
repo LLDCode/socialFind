@@ -2,6 +2,10 @@
 include("../includes/navbar.php");
 $imageErr = "";
 
+if (!isset($_SESSION['username'])) {
+  header("Location: login.php");
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $mbFileSize = $_FILES["fileToUpload"]["size"] / 1000000;
   if ($mbFileSize > 10) {
