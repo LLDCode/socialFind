@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
       $business = new Businesses($conn, $businessInfo);
       $business->createBusiness(); // this method doesn't exist yet
-      //header("Location: ArticlesListing.php");
+      header("Location: viewPosts.php");
     }
   }
   

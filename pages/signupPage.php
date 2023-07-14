@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($passwordErr) && empty ($usernameErr)) {
       addUser($fullName, $username, $password);
+      login($username);
     }
 }
 
@@ -43,6 +44,12 @@ function addUser($fullName, $username, $password) {
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
     $stmt->execute();
+}
+
+function login($username) {
+    $_SESSION['username'] = $username;
+    $_SESSION['userid'] = getUserId($username);
+    header("Location: viewPosts.php");
 }
 
 ?>
